@@ -1,1 +1,21 @@
-<p>register works!</p>
+<h2>Registrarse</h2>
+
+<form autocomplete="off" [formGroup]="formulario"  (ngSubmit)="registrar()">
+    <div>
+        <label for="email">Correo Electronico</label>
+        <br>
+        <input type="email" formControlName="email" id="email" placeholder="Ingrese Correo Electronico" >
+        <span *ngIf="isValid('email')">{{getError('email')}}</span>
+    </div>
+    <br>
+
+    <div>
+        <label for="contrasena"> Contraseña</label>
+        <br>
+        <input type="text" formControlName="contrasena" id="contrasena" placeholder="Ingrese Contraseña" >
+        <span *ngIf="isValid('contrasena')">{{getError('contrasena')}}</span>
+    </div>
+
+    <br><br>
+    <button [disabled]="formulario.invalid" type="submit">Registrarme</button>
+</form>

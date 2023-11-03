@@ -1,1 +1,32 @@
-<p>login works!</p>
+<h2>LOGIN</h2>
+
+    <form autocomplete="off" [formGroup]="formulario" (ngSubmit)="ingresar()">
+        <div>
+            <label for="email">Correo Electronico</label>
+            <br>
+            <input type="email" formControlName="email" id="email" placeholder="Ingrese Correo Electronico" >
+
+            <span *ngIf="isValid('email')">{{getError('email')}}</span>
+          </div>
+
+        <br>
+
+        <div>
+            <label for="contraseña"> Contraseña</label>
+            <br>
+            <input type="password" formControlName="contrasena" id="contraseña" placeholder="Ingrese Contraseña" >
+
+            <span *ngIf="isValid('contrasena')">{{getError('contrasena')}}</span>
+        </div>
+
+        <br><br>
+        <button type="submit" [disabled]="formulario.invalid" >Aceptar</button>
+    </form>
+
+    <br><br>
+ <!--    <button (click)="irAregistrar()" >Registrarme por primera vez</button>
+    <br><br>
+
+    <button (click)="volver()" class="button">Volver al inicio</button> -->
+
+

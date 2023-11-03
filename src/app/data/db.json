@@ -1,0 +1,19 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "email": "andrea@gmail.com",
+      "contrasena": "123456"
+    },
+    {
+      "id": 2,
+      "email": "maximiliano@gmail.com",
+      "contrasena": "123456"
+    },
+    {
+      "id": 3,
+      "email": "andreaa@gmail.com",
+      "contrasena": "444444h"
+    }
+  ]
+}
