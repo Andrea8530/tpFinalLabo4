@@ -1,6 +1,21 @@
-.obraSocial{
-    border: 1px solid black;
-    margin: 20px;
-    padding: 4rem;
-    border-radius: 20px;
+
+
+.inicio{
+    margin-bottom: 60px;
+    
 }
+
+body{
+    width: 100%;
+    height: 2000px;
+    background-image: url("src/assets/flooring.jpg");
+}
+.boton-mutuales{
+    display: flex;
+}
+
+.boton-mutuales-contenido{
+    margin:auto;
+}
+
+
