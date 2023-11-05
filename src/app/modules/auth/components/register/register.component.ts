@@ -72,7 +72,7 @@ export class RegisterComponent {
         this.serviceApi.postUsuarios(this.usuario).subscribe({
           next: ()=>{
            alert("Se registro con exito el usuario");
-           this.router.navigate(['/login'])
+           this.router.navigate(['auth'])
           },
           error:()=> alert("Hubo un error al registrar")
        })

@@ -60,35 +60,23 @@ export class LoginComponent {
       const check = this.serviceApi.verificarLogin(this.formulario.value.email, this.formulario.value.contrasena);
 
       if(await check){
-        this.router.navigate(['/home']);
+        
+        this.router.navigate(['/landing']);
       }else{
         alert("Usuario no existe");
         this.email = this.formulario.value.email;
 
         this.formulario.reset({ email: this.email });
-
       }
     }catch(error){
       console.log(error);
     }
   }
 
+  public irARegistrar(){
 
+    this.router.navigate(['auth/register'])
 
-  /* try {
-      let isLogin: boolean = await this.authService.login(this.loginForm.value.email, this.loginForm.value.password);
-      if (isLogin) {
-        this.router.navigate(["/main"]);
-      }
-      else {
-
-        this.email = this.loginForm.value.email;
-
-        this.loginForm.reset({ email: this.email });
-      }
-
-    } catch (error) {
-      console.log(error);
-    }*/
+  }
 
 }

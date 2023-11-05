@@ -1,21 +1,23 @@
-<h2>Registrarse</h2>
-
-<form autocomplete="off" [formGroup]="formulario"  (ngSubmit)="registrar()">
-    <div>
-        <label for="email">Correo Electronico</label>
-        <br>
-        <input type="email" formControlName="email" id="email" placeholder="Ingrese Correo Electronico" >
-        <span *ngIf="isValid('email')">{{getError('email')}}</span>
+<shared-navbar></shared-navbar>
+<body>
+    <div class="contenedorForm">
+    <form class="formulario" autocomplete="off" [formGroup]="formulario" (ngSubmit)="registrar() ">
+        <h2>Registrarse</h2>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <input type="email" class="form-control" formControlName="email" id="email" aria-describedby="emailHelp">
+          <span *ngIf="isValid('email')" class="span">{{getError('email')}}</span>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input type="password" class="form-control" formControlName="contrasena" id="contraseña">
+          <span *ngIf="isValid('contrasena')">{{getError('contrasena')}}</span>
+        </div>
+        <button [disabled]="formulario.invalid" type="submit" class="btn btn-primary">Submit</button>
+      </form>
+      
     </div>
-    <br>
 
-    <div>
-        <label for="contrasena"> Contraseña</label>
-        <br>
-        <input type="text" formControlName="contrasena" id="contrasena" placeholder="Ingrese Contraseña" >
-        <span *ngIf="isValid('contrasena')">{{getError('contrasena')}}</span>
-    </div>
+</body>
 
-    <br><br>
-    <button [disabled]="formulario.invalid" type="submit">Registrarme</button>
-</form>
+<shared-footer></shared-footer>

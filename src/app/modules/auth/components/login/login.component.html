@@ -1,32 +1,24 @@
-<h2>LOGIN</h2>
+<shared-navbar></shared-navbar>
 
-    <form autocomplete="off" [formGroup]="formulario" (ngSubmit)="ingresar()">
-        <div>
-            <label for="email">Correo Electronico</label>
-            <br>
-            <input type="email" formControlName="email" id="email" placeholder="Ingrese Correo Electronico" >
-
-            <span *ngIf="isValid('email')">{{getError('email')}}</span>
-          </div>
-
-        <br>
-
-        <div>
-            <label for="contraseña"> Contraseña</label>
-            <br>
-            <input type="password" formControlName="contrasena" id="contraseña" placeholder="Ingrese Contraseña" >
-
-            <span *ngIf="isValid('contrasena')">{{getError('contrasena')}}</span>
+<body>
+    <div class="contenedorForm">
+    <form class="formulario" autocomplete="off" [formGroup]="formulario" (ngSubmit)="ingresar() ">
+        <h2>Login</h2>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <input type="email" class="form-control" formControlName="email" id="email" aria-describedby="emailHelp">
+          <span *ngIf="isValid('email')" class="span">{{getError('email')}}</span>
         </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input type="password" class="form-control" formControlName="contrasena" id="contraseña">
+          <span *ngIf="isValid('contrasena')">{{getError('contrasena')}}</span>
+        </div>
+        <button [disabled]="formulario.invalid" type="submit" class="btn btn-primary">Submit</button>
+        <button type="button" class="btn btn-primary" (click)="irARegistrar()">Registrarse</button>
+      </form>
+      
+    </div>
 
-        <br><br>
-        <button type="submit" [disabled]="formulario.invalid" >Aceptar</button>
-    </form>
-
-    <br><br>
- <!--    <button (click)="irAregistrar()" >Registrarme por primera vez</button>
-    <br><br>
-
-    <button (click)="volver()" class="button">Volver al inicio</button> -->
-
-
+</body>
+<shared-footer></shared-footer>
