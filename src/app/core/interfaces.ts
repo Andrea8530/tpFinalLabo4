@@ -3,3 +3,10 @@ export interface iUsuario{
   email: string,
   contrasena: string
 }
+
+export interface iMedico{
+  id: number | null,
+  nombre: string,
+  matricula: string,
+  idEspecialidad: number | null
+}

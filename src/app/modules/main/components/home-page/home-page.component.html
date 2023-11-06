@@ -1,1 +1,6 @@
 <p>home-page works!</p>
+
+<h1>{{num}}</h1>
+<app-view-medics [medicos]="listaMedicos" ></app-view-medics>
+
+<app-view-medicos-especialidad [medicosEspec]="listaMedicosEspec" (eventoParaEspecialidad)="medicosPorEspecialidad($event)" ></app-view-medicos-especialidad>

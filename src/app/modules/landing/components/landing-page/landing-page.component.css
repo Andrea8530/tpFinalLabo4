@@ -69,3 +69,7 @@ h2{
     margin-bottom: 15px;
 }
 
+a:hover{
+    cursor: pointer;
+    border: 2px solid #2e706b ;
+}

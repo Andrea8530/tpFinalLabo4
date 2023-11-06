@@ -16,16 +16,6 @@
       "contrasena": "444444h"
     },
     {
-      "id": 4,
-      "email": "",
-      "contrasena": ""
-    },
-    {
-      "id": 5,
-      "email": null,
-      "contrasena": null
-    },
-    {
       "id": 6,
       "email": "maxi123@gmail.com",
       "contrasena": "a123456"
@@ -49,6 +39,161 @@
       "id": 10,
       "email": "maxi3@gmail.com",
       "contrasena": "123456a"
+    },
+    {
+      "id": 11,
+      "email": "marianaf@gmail.com",
+      "contrasena": "123456a"
+    }
+  ],
+  "medicos": [
+    {
+      "id": 1,
+      "nombre": "Andrea",
+      "matricula": "M12345",
+      "idEspecialidad": 1
+    },
+    {
+      "id": 2,
+      "nombre": "Maxi",
+      "matricula": "M67890",
+      "idEspecialidad": 3
+    },
+    {
+      "id": 3,
+      "nombre": "Mariana",
+      "matricula": "M54321",
+      "idEspecialidad": 1
+    },
+    {
+      "id": 4,
+      "nombre": "Are",
+      "matricula": "M98765",
+      "idEspecialidad": 2
+    },
+    {
+      "id": 5,
+      "nombre": "Luna",
+      "matricula": "M11223",
+      "idEspecialidad": 4
+    },
+    {
+      "id": 6,
+      "nombre": "greta",
+      "matricula": "M33445",
+      "idEspecialidad": 2
+    },
+    {
+      "id": 7,
+      "nombre": " El gordo",
+      "matricula": "M55443",
+      "idEspecialidad": 2
+    },
+    {
+      "id": 8,
+      "nombre": "Lina",
+      "matricula": "M77777",
+      "idEspecialidad": 3
+    },
+    {
+      "id": 9,
+      "nombre": "La blanqui",
+      "matricula": "M88888",
+      "idEspecialidad": 1
+    },
+    {
+      "id": 10,
+      "nombre": "Argento",
+      "matricula": "M99999",
+      "idEspecialidad": 4
+    }
+  ],
+  "obras_sociales": [
+    {
+      "id": 1,
+      "nombre": "Obra Social A"
+    },
+    {
+      "id": 2,
+      "nombre": "Obra Social B"
+    },
+    {
+      "id": 3,
+      "nombre": "Obra Social C"
+    },
+    {
+      "id": 4,
+      "nombre": "Obra Social D"
+    }
+  ],
+  "medicos_por_obras_sociales": [
+    {
+      "id": 1,
+      "id_medico": 1,
+      "id_obra_social": 2
+    },
+    {
+      "id": 2,
+      "id_medico": 1,
+      "id_obra_social": 1
+    },
+    {
+      "id": 3,
+      "id_medico": 3,
+      "id_obra_social": 2
+    },
+    {
+      "id": 4,
+      "id_medico": 4,
+      "id_obra_social": 1
+    },
+    {
+      "id": 5,
+      "id_medico": 5,
+      "id_obra_social": 3
+    },
+    {
+      "id": 6,
+      "id_medico": 6,
+      "id_obra_social": 1
+    },
+    {
+      "id": 7,
+      "id_medico": 7,
+      "id_obra_social": 4
+    },
+    {
+      "id": 8,
+      "id_medico": 8,
+      "id_obra_social": 4
+    },
+    {
+      "id": 9,
+      "id_medico": 9,
+      "id_obra_social": 4
+    },
+    {
+      "id": 10,
+      "id_medico": 10,
+      "id_obra_social": 4
+    }
+  ],
+  "Especialidades": [
+    {
+      "idEspecialidad": 1,
+      "nombre": "Clínica"
+    },
+    {
+      "idEspecialidad": 2,
+      "nombre": "Cardiología"
+    },
+    {
+      "idEspecialidad": 3,
+      "nombre": "Pediatria"
+    },
+    {
+      "idEspecialidad": 4,
+      "nombre": "Oftalmología"
     }
   ]
 }

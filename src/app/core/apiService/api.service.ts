@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { Usuario } from '../models';
+import { Observable, switchMap } from 'rxjs';
+import { Medico, Usuario } from '../models';
 
 @Injectable({
   providedIn: 'root'
@@ -28,4 +28,22 @@ export class ApiService {
     return this.http.get<Usuario[]>(`${this.url}/usuarios?email=${email}`);
   }
 
+
+  /// visualizacion de medicos por obra social
+
+  getMedicosObraSocial(num: number): Observable<Medico[]> {
+    return this.http
+      .get(`${this.url}/medicos_por_obras_sociales?id_obra_social=${num}`)
+      .pipe(
+        switchMap((data: any) => {
+          const medicoIds = data.map((item: { id_medico: any }) => item.id_medico);
+          return this.http.get<Medico[]>(`${this.url}/medicos?id=${medicoIds.join('&id=')}`);
+        })
+      );
+  }
+
+
+
 }
+
+
