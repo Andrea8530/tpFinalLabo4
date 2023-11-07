@@ -16,7 +16,6 @@ export class LoginComponent {
   constructor(private serviceApi:AuthService, private router:Router, private fb: FormBuilder){}
 
   private email: string = '';
-
   //public usuario: Usuario | null = null;
 
   private emailPattern: RegExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -67,6 +66,7 @@ export class LoginComponent {
         this.email = this.formulario.value.email;
 
         this.formulario.reset({ email: this.email });
+        
       }
     }catch(error){
       console.log(error);

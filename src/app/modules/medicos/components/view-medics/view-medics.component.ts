@@ -14,7 +14,7 @@ export class ViewMedicsComponent{
 
   @Input()
   medicos: Medico[]=[];
-
+  
   
 
   

@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { MainRoutingModule } from './main-routing.module';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { MedicosModule } from '../medicos/medicos.module';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { MedicosModule } from '../medicos/medicos.module';
   imports: [
     CommonModule,
     MainRoutingModule,
-    MedicosModule
+    MedicosModule,
+    SharedModule
   ]
 })
 export class MainModule { }

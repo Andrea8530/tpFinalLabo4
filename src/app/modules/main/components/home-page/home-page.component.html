@@ -1,6 +1,6 @@
-<p>home-page works!</p>
-
-<h1>{{num}}</h1>
-<app-view-medics [medicos]="listaMedicos" ></app-view-medics>
-
+<shared-navbar></shared-navbar>
+<body>
 <app-view-medicos-especialidad [medicosEspec]="listaMedicosEspec" (eventoParaEspecialidad)="medicosPorEspecialidad($event)" ></app-view-medicos-especialidad>
+<app-view-medics *ngIf="listaMedicosEspec.length == 0" [medicos]="listaMedicos"></app-view-medics>
+</body>
+<shared-footer></shared-footer>

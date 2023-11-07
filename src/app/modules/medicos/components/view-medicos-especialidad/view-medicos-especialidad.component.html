@@ -1,33 +1,54 @@
-
+<div>
+<div class="sideBar">
  <form [formGroup]="formulario">
     <h3>Selecciona una especialidad:</h3>
-  
-    <label>
-      <input type="radio" formControlName="especialidad" [value]="'Clinica'" (click)="medicoPorEspecialidad(1)" />
-      Clinica
-    </label>
-  
-    <label>
-      <input type="radio" formControlName="especialidad" [value]="'Cardiología'"  (click)="medicoPorEspecialidad(2)" />
-      Cardiología
-    </label>
-  
-    <label>
-      <input type="radio" formControlName="especialidad" [value]="'Pediatria'" (click)="medicoPorEspecialidad(3)" />
+  <tr>
+  <input type="radio" formControlName="especialidad" [value]="'Clinica'" (click)="medicoPorEspecialidad(1)"/>Clinica
+  </tr>
+  <tr>
+  <input type="radio" formControlName="especialidad" [value]="'Cardiología'"  (click)="medicoPorEspecialidad(2)" />
+  Cardiología
+  </tr>
+  <tr>
+  <input type="radio" formControlName="especialidad" [value]="'Pediatria'" (click)="medicoPorEspecialidad(3)" />
       Pediatria
-    </label>
-  
-    <label>
+  </tr>
+  <tr>
       <input type="radio" formControlName="especialidad" [value]="'Oftalmología'" (click)="medicoPorEspecialidad(4)" />
       Oftalmología
-    </label>
-  </form>
+  </tr> 
+</form>
+</div>
   
-  <ul>
-    <li *ngFor="let doctor of medicosEspec">
-      {{ doctor.nombre }} {{doctor.matricula}} 
-    </li>
-  </ul>
+
+  
+    <div *ngIf="medicosEspec.length>0">
+    <div  class="container" >
+     <h2> Medicos {{especialidad}} </h2>
+     <table class="table">
+       <thead>
+         <tr> 
+           <th scope="col">Nombre</th>
+           <th scope="col">Matricula</th>
+           <th scope="col">Editar Informacion</th>
+           <th scope="col">Eliminar Medico</th>
+         </tr>
+       </thead>
+       <tbody>
+         <tr *ngFor="let doctor of medicosEspec">
+           <td>{{doctor.nombre}}</td>
+           <td>{{doctor.matricula}} </td>
+           <td><a href="">Editar Informacion</a></td>
+           <td><a href="">Eliminar Medico</a> </td>
+         </tr>
+       </tbody>
+     </table>
+     </div>
+  
+    </div>
+
+ 
+</div>
 
 
   

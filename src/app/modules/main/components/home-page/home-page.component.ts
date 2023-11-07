@@ -35,10 +35,11 @@ export class HomePageComponent implements OnInit {
 
 
 
-  public listaMedicosEspec: Medico[]=[];
+  public listaMedicosEspec: Medico[]= [] ;
 
   medicosPorEspecialidad(idEspeci:number){
     this.listaMedicosEspec = this.listaMedicos.filter(medico => medico.idEspecialidad === idEspeci);
+    
   }
 
 
