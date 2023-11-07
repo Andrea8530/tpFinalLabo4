@@ -30,16 +30,16 @@
          <tr> 
            <th scope="col">Nombre</th>
            <th scope="col">Matricula</th>
-           <th scope="col">Editar Informacion</th>
-           <th scope="col">Eliminar Medico</th>
+           <th *ngIf="visible" scope="col">Editar Informacion</th>
+           <th *ngIf="visible" scope="col">Eliminar Medico</th>
          </tr>
        </thead>
        <tbody>
          <tr *ngFor="let doctor of medicosEspec">
            <td>{{doctor.nombre}}</td>
            <td>{{doctor.matricula}} </td>
-           <td><a href="">Editar Informacion</a></td>
-           <td><a href="">Eliminar Medico</a> </td>
+           <td *ngIf="visible" ><a href="">Editar Informacion</a></td>
+           <td *ngIf="visible" ><a href="">Eliminar Medico</a> </td>
          </tr>
        </tbody>
      </table>
@@ -49,6 +49,3 @@
 
  
 </div>
-
-
-  

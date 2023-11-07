@@ -13,11 +13,11 @@ export class HomePageComponent implements OnInit {
   constructor(private route: ActivatedRoute, private serviceApi:ApiService) { }
 
   public num: number=0;
+  public isActivo:Boolean = new Boolean();
   
   ngOnInit() {
-    this.route.params.subscribe(params => {
-      this.num = params['numero'];
-    });
+    this.num = +this.route.snapshot.paramMap.get('numero')!;
+    this.isActivo = this.route.snapshot.paramMap.get('esActivo') === 'true';
     this.getMedicosXobraSocial(this.num);
   }
 
@@ -42,5 +42,9 @@ export class HomePageComponent implements OnInit {
     
   }
 
+
+  borrarMedicoXobraSocial(idMed:number){
+
+  }
 
 }

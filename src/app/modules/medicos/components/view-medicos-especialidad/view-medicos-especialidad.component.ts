@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { Medico } from 'src/app/core/models';
 
 @Component({
-  selector: 'app-view-medicos-especialidad',
+  selector: 'medico-view-medicos-especialidad',
   templateUrl: './view-medicos-especialidad.component.html',
   styleUrls: ['./view-medicos-especialidad.component.css']
 })
@@ -15,6 +15,9 @@ export class ViewMedicosEspecialidadComponent {
 
   @Input()
   public medicosEspec: Medico[]=[];
+
+  @Input()
+  visible:Boolean = new Boolean();
   
 
   @Output()

@@ -2,23 +2,33 @@
   "usuarios": [
     {
       "id": 1,
-      "email": "andrea@gmail.com",
-      "contrasena": "123456"
+      "email": "osde@gmail.com",
+      "contrasena": "123456a"
     },
     {
       "id": 2,
-      "email": "maximiliano@gmail.com",
-      "contrasena": "123456"
+      "email": "ospe@gmail.com",
+      "contrasena": "123456a"
     },
     {
       "id": 3,
-      "email": "andreaa@gmail.com",
-      "contrasena": "444444h"
+      "email": "federada@gmail.com",
+      "contrasena": "123456a"
+    },
+    {
+      "id": 4,
+      "email": "medife@gmail.com",
+      "contrasena": "123456a"
+    },
+    {
+      "id": 5,
+      "email": "maximiliano@gmail.com",
+      "contrasena": "123456a"
     },
     {
       "id": 6,
       "email": "maxi123@gmail.com",
-      "contrasena": "a123456"
+      "contrasena": "a123456a"
     },
     {
       "id": 7,
@@ -44,6 +54,11 @@
       "id": 11,
       "email": "marianaf@gmail.com",
       "contrasena": "123456a"
+    },
+    {
+      "id": 12,
+      "email": "andrea@gmail.com",
+      "contrasena": "123456"
     }
   ],
   "medicos": [
@@ -111,19 +126,19 @@
   "obras_sociales": [
     {
       "id": 1,
-      "nombre": "Obra Social A"
+      "nombre": "Osde"
     },
     {
       "id": 2,
-      "nombre": "Obra Social B"
+      "nombre": "Ospe"
     },
     {
       "id": 3,
-      "nombre": "Obra Social C"
+      "nombre": "Federada Salud"
     },
     {
       "id": 4,
-      "nombre": "Obra Social D"
+      "nombre": "Medife"
     }
   ],
   "medicos_por_obras_sociales": [

@@ -59,8 +59,23 @@ export class LoginComponent {
       const check = this.serviceApi.verificarLogin(this.formulario.value.email, this.formulario.value.contrasena);
 
       if(await check){
+        //
+        console.log(this.formulario.value.email);
         
-        this.router.navigate(['/landing']);
+        if(this.formulario.value.email === 'osde@gmail.com'){          
+          this.router.navigate(['/home', 1, true]);
+        }else if(this.formulario.value.email === 'ospe@gmail.com'){
+          this.router.navigate(['/home', 2, true]);
+        }else if(this.formulario.value.email === 'federada@gmail.com'){
+          this.router.navigate(['/home', 3, true]);
+        }else if(this.formulario.value.email === 'medife@gmail.com'){
+          this.router.navigate(['/home', 4, true]);
+        }else{
+          this.router.navigate(['/landing']);
+        }
+      
+        //
+        
       }else{
         alert("Usuario no existe");
         this.email = this.formulario.value.email;

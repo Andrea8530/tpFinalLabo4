@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, switchMap } from 'rxjs';
+import { Observable, catchError, map, of, switchMap } from 'rxjs';
 import { Medico, Usuario } from '../models';
 
 @Injectable({
@@ -42,6 +42,13 @@ export class ApiService {
       );
   }
 
+  public deleteMedicoXobraSocial(id:number):Observable<Boolean>{
+    return this.http.delete<Boolean>(`${this.url}/medicos_por_obras_sociales/${id}`)
+    .pipe(
+      map(res=>true),
+      catchError(error => of(false))
+      );
+  }
 
 
 }

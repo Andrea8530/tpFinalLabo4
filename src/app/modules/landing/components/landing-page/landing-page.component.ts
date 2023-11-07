@@ -11,7 +11,7 @@ export class LandingPageComponent {
   constructor(private router:Router){}
 
   public medicosXmutual(num:number){
-  this.router.navigate(['/home', num]);
+  this.router.navigate(['/home', num, false]);
   }
 
 }
