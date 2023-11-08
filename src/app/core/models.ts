@@ -1,4 +1,4 @@
-import { iMedico, iUsuario } from "./interfaces";
+import { iMedico, iUsuario, ioSporMedico } from "./interfaces";
 
 export class Usuario implements iUsuario{
   id: number | null = null;
@@ -27,4 +27,16 @@ export class Medico implements iMedico{
   }
 }
 
+export class OsporMedico implements ioSporMedico{
+  id: number | null = null;
+  id_medico: number | null = null;
+  id_obra_social: number | null = null;
+
+  constructor(osPorMedico?:any){
+    this.id = osPorMedico == undefined ? null : osPorMedico.id;
+    this.id_medico = osPorMedico == undefined ? null : osPorMedico.id_medico;
+    this.id_obra_social = osPorMedico == undefined ? null : osPorMedico.id_obra_social;
+  }
+  
+}
 

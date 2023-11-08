@@ -12,6 +12,7 @@ export class ViewMedicosEspecialidadComponent {
   constructor(private fb: FormBuilder){}
 
   public especialidad : string = ''; //Variable creada para usar en medicoXEspecialidad. segun el numero, un nombre de especialidad
+  public verEspecialidad: boolean = false;
 
   @Input()
   public medicosEspec: Medico[]=[];
@@ -19,9 +20,14 @@ export class ViewMedicosEspecialidadComponent {
   @Input()
   visible:Boolean = new Boolean();
   
+  @Input()
+  public medicos : Medico[] = [];
 
   @Output()
   public eventoParaEspecialidad:EventEmitter<number> = new EventEmitter();
+
+  @Output()
+  public eventoParaTraerTodosLosMedicos:EventEmitter<Medico[]> = new EventEmitter();
 
   public medicoPorEspecialidad(num:number){
     this.eventoParaEspecialidad.emit(num);
@@ -34,8 +40,14 @@ export class ViewMedicosEspecialidadComponent {
     }else{
       this.especialidad = "Oftalmologos"
     }
+  this.verEspecialidad=false;
+   
   }
 
+  public TodosLosMedicos(){
+    this.eventoParaTraerTodosLosMedicos.emit();
+    this.verEspecialidad =true;
+  }
 
   formulario: FormGroup = this.fb.group({
     especialidad: [''],

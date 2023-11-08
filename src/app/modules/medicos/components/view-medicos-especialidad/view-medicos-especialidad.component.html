@@ -3,7 +3,8 @@
  <form [formGroup]="formulario">
     <h3>Selecciona una especialidad:</h3>
   <tr>
-  <input type="radio" formControlName="especialidad" [value]="'Clinica'" (click)="medicoPorEspecialidad(1)"/>Clinica
+  <input type="radio" formControlName="especialidad" [value]="'Clinica'" (click)="medicoPorEspecialidad(1)"/>
+   Clinica
   </tr>
   <tr>
   <input type="radio" formControlName="especialidad" [value]="'Cardiología'"  (click)="medicoPorEspecialidad(2)" />
@@ -17,19 +18,26 @@
       <input type="radio" formControlName="especialidad" [value]="'Oftalmología'" (click)="medicoPorEspecialidad(4)" />
       Oftalmología
   </tr> 
+  <tr>
+    <input type="radio" formControlName="especialidad" [value]="'Todos'" (click)="TodosLosMedicos()" >
+      Todos
+  </tr>
 </form>
 </div>
   
 
   
-    <div *ngIf="medicosEspec.length>0">
-    <div  class="container" >
-     <h2> Medicos {{especialidad}} </h2>
+    <div *ngIf="medicosEspec.length>0" class="table-responsive-lg">
+    <div class="container" >
+      
+     <h2 > Medicos <span *ngIf="!verEspecialidad">{{especialidad}}</span> </h2>
+    
      <table class="table">
        <thead>
          <tr> 
            <th scope="col">Nombre</th>
            <th scope="col">Matricula</th>
+           <th *ngIf="verEspecialidad" scope="col" >Especialidad</th>
            <th *ngIf="visible" scope="col">Editar Informacion</th>
            <th *ngIf="visible" scope="col">Eliminar Medico</th>
          </tr>
@@ -37,7 +45,8 @@
        <tbody>
          <tr *ngFor="let doctor of medicosEspec">
            <td>{{doctor.nombre}}</td>
-           <td>{{doctor.matricula}} </td>
+           <td>{{doctor.matricula}}</td>
+           <td *ngIf="verEspecialidad" >{{doctor.idEspecialidad}} </td>
            <td *ngIf="visible" ><a href="">Editar Informacion</a></td>
            <td *ngIf="visible" ><a href="">Eliminar Medico</a> </td>
          </tr>

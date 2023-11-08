@@ -38,13 +38,21 @@ export class HomePageComponent implements OnInit {
   public listaMedicosEspec: Medico[]= [] ;
 
   medicosPorEspecialidad(idEspeci:number){
-    this.listaMedicosEspec = this.listaMedicos.filter(medico => medico.idEspecialidad === idEspeci);
+    this.listaMedicosEspec = this.listaMedicos.filter(medico => medico.idEspecialidad === idEspeci); 
+  }
+
+  todosLosMedicos(){
+    this.listaMedicosEspec= this.listaMedicos;
     
   }
 
 
   borrarMedicoXobraSocial(idMed:number){
 
+  }
+
+  refrescar(bool : Boolean){
+    this.getMedicosXobraSocial(this.num)
   }
 
 }

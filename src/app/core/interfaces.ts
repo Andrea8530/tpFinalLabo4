@@ -10,3 +10,9 @@ export interface iMedico{
   matricula: string,
   idEspecialidad: number | null
 }
+
+export interface ioSporMedico{
+  id: number | null,
+  id_medico: number | null,
+  id_obra_social: number | null,
+}

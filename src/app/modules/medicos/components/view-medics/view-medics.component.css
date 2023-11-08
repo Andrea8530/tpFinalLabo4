@@ -1,3 +1,9 @@
 .container{
 margin-top: 25px;
+width: 70%
+
+}
+
+td, tr{
+    border-bottom: 1px solid rgb(0, 255, 221);
 }

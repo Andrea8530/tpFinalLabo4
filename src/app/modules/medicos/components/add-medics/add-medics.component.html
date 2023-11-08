@@ -1,1 +1,32 @@
-<p>add-medics works!</p>
+<button *ngIf="visible" (click)="tocarBoton()" class="soyUnBoton" >Ingresar nuevo medico</button>
+<div class="container" *ngIf="boton" >
+
+<div class="contenedorForm">
+    <form class="formulario" autocomplete="off" [formGroup]="formulario" (ngSubmit)="agregarMedico()">
+        <h2>Ingresar Datos</h2>
+        <div class="mb-3">
+          <label for="nombre" class="form-label">Nombre</label>
+          <input type="nombre" class="form-control" formControlName="nombre" id="name">
+          <span *ngIf="isValid('nombre')" class="span">{{getError('nombre')}}</span>
+        </div>
+        <div class="mb-3">
+          <label for="matricula" class="form-label">Matricula</label>
+          <input type="matricula" class="form-control" formControlName="matricula" id="matricula">
+          <span *ngIf="isValid('matricula')">{{getError('matricula')}}</span>
+        </div>
+        <div class="mb-3">
+            <label for="idEspecialidad" class="form-label">idEspecialidad</label>
+            <input type="idEspecialidad" class="form-control" formControlName="idEspecialidad" id="idEspecialidad" list="drawfidEspecialidad">
+            <datalist id="drawfidEspecialidad">
+                <option value=1>Clinica</option>
+                <option value=2>Cardiologia</option>
+                <option value=3>Pediatria</option>
+                <option value=4>Oftalmologia</option>
+              </datalist>
+            <span *ngIf="isValid('idEspecialidad')">{{getError('idEspecialidad')}}</span>
+            
+          </div>
+        <button [disabled]="formulario.invalid" type="submit" class="btn btn-primary" >Submit</button>
+      </form>
+    </div>
+  </div>

@@ -10,7 +10,7 @@ import { Medico } from 'src/app/core/models';
 export class ViewMedicsComponent{
   
 
-  constructor( ) {}
+  constructor() {}
 
   @Input()
   visible:Boolean = new Boolean();
@@ -25,8 +25,7 @@ export class ViewMedicsComponent{
     borrar(id:number){
       this.eventoParaBorrar.emit(id);
     }
-  
-  
+ 
   
 
   

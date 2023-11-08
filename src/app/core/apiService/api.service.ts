@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError, map, of, switchMap } from 'rxjs';
-import { Medico, Usuario } from '../models';
+import { Medico, OsporMedico, Usuario } from '../models';
 
 @Injectable({
   providedIn: 'root'
@@ -49,6 +49,22 @@ export class ApiService {
       catchError(error => of(false))
       );
   }
+
+  public postMedico(medico : Medico):Observable<Medico>{
+    return this.http.post<Medico>(`${this.url}/medicos`,medico);
+  }
+
+  public postMedicoAObraSocial(osPorMedico : OsporMedico): Observable<OsporMedico>{
+    
+    return this.http.post<OsporMedico>(`${this.url}/medicos_por_obras_sociales`,osPorMedico);
+    
+  }
+
+  //funcion para verificar que el medico exista o no y en base a eso agregarlo solo a la mutual o en general.
+  public getVerificarMedico(matricula: string): Observable<Medico[]>{  
+    return this.http.get<Medico[]>(`${this.url}/medicos?matricula=${matricula}`);
+  }
+
 
 
 }

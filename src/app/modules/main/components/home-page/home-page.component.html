@@ -1,8 +1,10 @@
 <shared-navbar></shared-navbar>
 <body>
-<medico-view-medicos-especialidad [visible]="isActivo" [medicosEspec]="listaMedicosEspec" (eventoParaEspecialidad)="medicosPorEspecialidad($event)" ></medico-view-medicos-especialidad>
+<medico-view-medicos-especialidad [visible]="isActivo" [medicos]="listaMedicos" [medicosEspec]="listaMedicosEspec" (eventoParaTraerTodosLosMedicos)="todosLosMedicos()" (eventoParaEspecialidad)="medicosPorEspecialidad($event)"  ></medico-view-medicos-especialidad>
 <medico-view-medics [visible]="isActivo"  *ngIf="listaMedicosEspec.length == 0" [medicos]="listaMedicos" (eventoParaBorrar)="borrarMedicoXobraSocial($event)" ></medico-view-medics>
+<medico-add-medics [visible]="isActivo" [numberIdOs]="num" (eventoParaRefrescar)="refrescar($event)" style="margin-top: 150px;" ></medico-add-medics>
 </body>
+
 <shared-footer></shared-footer>
 
 
