@@ -84,7 +84,7 @@
       "id": 4,
       "nombre": "Are",
       "matricula": "M98765",
-      "idEspecialidad": 2
+      "idEspecialidad": 4
     },
     {
       "id": 5,
@@ -121,6 +121,60 @@
       "nombre": "Argento",
       "matricula": "M99999",
       "idEspecialidad": 4
+    },
+    {
+      "id": 11,
+      "nombre": "asdasd",
+      "matricula": "1",
+      "idEspecialidad": "1"
+    },
+    {
+      "id": 12,
+      "nombre": "a",
+      "matricula": "0",
+      "idEspecialidad": "1"
+    },
+    {
+      "id": 13,
+      "nombre": "s",
+      "matricula": "3",
+      "idEspecialidad": "2"
+    },
+    {
+      "id": 14,
+      "nombre": "s",
+      "matricula": "6",
+      "idEspecialidad": 4
+    },
+    {
+      "id": 15,
+      "nombre": "dw",
+      "matricula": "5",
+      "idEspecialidad": "1"
+    },
+    {
+      "id": 16,
+      "nombre": "a",
+      "matricula": "as5",
+      "idEspecialidad": "1"
+    },
+    {
+      "id": 17,
+      "nombre": "asdasd",
+      "matricula": "654",
+      "idEspecialidad": "1"
+    },
+    {
+      "id": 18,
+      "nombre": "asdsa",
+      "matricula": "98798",
+      "idEspecialidad": "1"
+    },
+    {
+      "id": 19,
+      "nombre": "maxiprueba",
+      "matricula": "a4",
+      "idEspecialidad": "1"
     }
   ],
   "obras_sociales": [
@@ -191,6 +245,56 @@
       "id": 10,
       "id_medico": 10,
       "id_obra_social": 4
+    },
+    {
+      "id": 11,
+      "id_medico": 11,
+      "id_obra_social": 1
+    },
+    {
+      "id": 12,
+      "id_medico": 12,
+      "id_obra_social": 1
+    },
+    {
+      "id": 13,
+      "id_medico": 13,
+      "id_obra_social": 1
+    },
+    {
+      "id": 14,
+      "id_medico": 14,
+      "id_obra_social": 1
+    },
+    {
+      "id": 15,
+      "id_medico": 15,
+      "id_obra_social": 1
+    },
+    {
+      "id": 16,
+      "id_medico": 16,
+      "id_obra_social": 1
+    },
+    {
+      "id": 17,
+      "id_medico": 17,
+      "id_obra_social": 1
+    },
+    {
+      "id": 18,
+      "id_medico": 15,
+      "id_obra_social": 1
+    },
+    {
+      "id": 19,
+      "id_medico": 18,
+      "id_obra_social": 1
+    },
+    {
+      "id": 20,
+      "id_medico": 19,
+      "id_obra_social": 1
     }
   ],
   "Especialidades": [

@@ -1,7 +1,8 @@
-body{
-    height: 78vh;
+.divMedicComponents{
+    margin: 0;
+    position:relative;
+    padding-bottom: 220px;
 }
 
-medico-add-medics{
-    margin-top: 150px;
-}
+
+
