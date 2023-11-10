@@ -21,7 +21,8 @@ import { EditMedicsComponent } from './components/edit-medics/edit-medics.compon
   exports:[
     ViewMedicsComponent,
     ViewMedicosEspecialidadComponent,
-    AddMedicsComponent
+    AddMedicsComponent,
+    EditMedicsComponent
   ]
 })
 export class MedicosModule { }

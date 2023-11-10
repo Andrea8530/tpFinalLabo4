@@ -28,7 +28,6 @@ export class ApiService {
     return this.http.get<Usuario[]>(`${this.url}/usuarios?email=${email}`);
   }
 
-
   /// visualizacion de medicos por obra social
 
   getMedicosObraSocial(num: number): Observable<Medico[]> {
@@ -55,7 +54,6 @@ export class ApiService {
   }
 
   public postMedicoAObraSocial(osPorMedico : OsporMedico): Observable<OsporMedico>{
-    
     return this.http.post<OsporMedico>(`${this.url}/medicos_por_obras_sociales`,osPorMedico);
     
   }
@@ -66,7 +64,15 @@ export class ApiService {
   }
 
 
+  ///para editar medico
+  public editMedico(medico:Medico):Observable<Medico>{
+    if(!medico.id) throw Error ("El id es requerido");
+    return this.http.patch<Medico>(`${this.url}/medicos/${medico.id}`, medico)
+  }
+
+  public getChequeoMedico(matricula:string):Observable<Medico[]>{
+    return this.http.get<Medico[]>(`${this.url}/medicos?matricula=${matricula}`);
+  }
 
 }
-
 

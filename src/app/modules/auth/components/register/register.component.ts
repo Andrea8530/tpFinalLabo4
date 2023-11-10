@@ -68,7 +68,6 @@ export class RegisterComponent {
 
       }else{
 
-
         this.serviceApi.postUsuarios(this.usuario).subscribe({
           next: ()=>{
            alert("Se registro con exito el usuario");

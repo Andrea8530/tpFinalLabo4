@@ -7,8 +7,8 @@
       <th scope="col">Nombre</th>
       <th scope="col">Matricula</th>
       <th scope="col"> Especialidad</th>
-      <th *ngIf="visible" scope="col">Editar Informacion</th>
       <th *ngIf="visible" scope="col">Eliminar Medico</th>
+      <th *ngIf="visible" scope="col">Editar Medico</th>
     </tr>
   </thead>
   <tbody>
@@ -16,8 +16,8 @@
       <td>{{doctor.nombre}}</td>
       <td>{{doctor.matricula}}</td>
       <td> {{doctor.idEspecialidad}} </td>
-      <td *ngIf="visible" ><a href="">Editar Informacion</a></td>
       <td *ngIf="visible" ><a (click)="borrar(doctor.id!)" href="">Eliminar Medico</a> </td>
+      <td *ngIf="visible" ><button (click)="editar(doctor)" >Editar Medico</button> </td>
     </tr>
   </tbody>
 </table>

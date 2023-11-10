@@ -1,22 +1,22 @@
 <button *ngIf="visible" (click)="tocarBoton()" class="soyUnBoton" >Ingresar nuevo medico</button>
 <div class="container" *ngIf="boton" >
 
-<div class="contenedorForm contenedorFormulario">
+  <div class="contenedorForm contenedorFormulario">
     <form class="formulario" autocomplete="off" [formGroup]="formulario" (ngSubmit)="agregarMedico()">
         <h2>Ingresar Datos</h2>
         <div class="mb-3">
           <label for="nombre" class="form-label">Nombre</label>
-          <input type="nombre" class="form-control" formControlName="nombre" id="name">
+          <input type="text" class="form-control" formControlName="nombre" id="name">
           <span *ngIf="isValid('nombre')" class="span">{{getError('nombre')}}</span>
         </div>
         <div class="mb-3">
           <label for="matricula" class="form-label">Matricula</label>
-          <input type="matricula" class="form-control" formControlName="matricula" id="matricula">
+          <input type="text" class="form-control" formControlName="matricula" id="matricula">
           <span *ngIf="isValid('matricula')">{{getError('matricula')}}</span>
         </div>
         <div class="mb-3">
-            <label for="idEspecialidad" class="form-label">idEspecialidad</label>
-            <input type="idEspecialidad" class="form-control" formControlName="idEspecialidad" id="idEspecialidad" list="drawfidEspecialidad">
+            <label for="idEspecialidad" class="form-label">Especialidad</label>
+            <input type="number" class="form-control" formControlName="idEspecialidad" id="idEspecialidad" list="drawfidEspecialidad">
             <datalist id="drawfidEspecialidad">
                 <option value=1>Clinica</option>
                 <option value=2>Cardiologia</option>
