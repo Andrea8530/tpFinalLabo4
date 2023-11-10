@@ -30,7 +30,7 @@ export class ViewMedicosEspecialidadComponent {
   public eventoParaTraerTodosLosMedicos:EventEmitter<Medico[]> = new EventEmitter();
 
   public medicoPorEspecialidad(num:number){
-    this.eventoParaEspecialidad.emit(num);
+   
     if(num ==1){
       this.especialidad ="Clinicos";
     }else if(num==2){
@@ -40,8 +40,8 @@ export class ViewMedicosEspecialidadComponent {
     }else{
       this.especialidad = "Oftalmologos"
     }
-  this.verEspecialidad=false;
-   
+    this.verEspecialidad=false;
+    this.eventoParaEspecialidad.emit(num);
   }
 
   public TodosLosMedicos(){
@@ -53,5 +53,13 @@ export class ViewMedicosEspecialidadComponent {
     especialidad: [''],
   })
 
+    //// para editar
+    @Output()
+    eventoParaEditar:EventEmitter<Medico> = new EventEmitter();
   
+    public editar(doctor:Medico){
+      this.eventoParaEditar.emit(doctor);
+    
+    } 
+
 }

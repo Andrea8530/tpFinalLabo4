@@ -1,21 +1,18 @@
 .contenedorNavBar{
-    
     background-image: linear-gradient(to right bottom, #ffffff, #dbe4f5, #c7e5f6, #45d8ee, #1ae0d3);
     opacity: 0.7;
 }
 
 .navBar{
-    
     display: flex;
     justify-content: end;
 }
 
 .logoNav{
-
     margin-left: 15px;
     height: 75px;
     display: flex;
-    justify-content: baseline;
+justify-content: baseline;
 }
 
 

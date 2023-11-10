@@ -129,7 +129,7 @@ public medicoXObraSocial: OsporMedico = new OsporMedico();
   validarEspecialidad(): ValidatorFn {
     return (control) => {
       const value = control.value;
-      const opcionesValidas = ['1', '2', '3', '4']; // Opciones válidas en el datalist
+      const opcionesValidas = [1, 2, 3, 4]; // Opciones válidas en el datalist
 
       if (!opcionesValidas.includes(value)) {
         return { especialidadInvalida: true };

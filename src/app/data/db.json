@@ -64,9 +64,9 @@
   "medicos": [
     {
       "id": 1,
-      "nombre": "Andrea",
+      "nombre": "gor",
       "matricula": "M12345",
-      "idEspecialidad": 1
+      "idEspecialidad": 2
     },
     {
       "id": 2,
@@ -76,15 +76,15 @@
     },
     {
       "id": 3,
-      "nombre": "Mariana",
-      "matricula": "M54321",
-      "idEspecialidad": 1
+      "nombre": "maxi",
+      "matricula": "M1234555",
+      "idEspecialidad": 2
     },
     {
       "id": 4,
       "nombre": "Are",
       "matricula": "M98765",
-      "idEspecialidad": 4
+      "idEspecialidad": 1
     },
     {
       "id": 5,
@@ -96,7 +96,7 @@
       "id": 6,
       "nombre": "greta",
       "matricula": "M33445",
-      "idEspecialidad": 2
+      "idEspecialidad": 1
     },
     {
       "id": 7,
@@ -124,57 +124,39 @@
     },
     {
       "id": 11,
-      "nombre": "asdasd",
-      "matricula": "1",
-      "idEspecialidad": "1"
-    },
-    {
-      "id": 12,
-      "nombre": "a",
-      "matricula": "0",
-      "idEspecialidad": "1"
-    },
-    {
-      "id": 13,
-      "nombre": "s",
-      "matricula": "3",
-      "idEspecialidad": "2"
-    },
-    {
-      "id": 14,
-      "nombre": "s",
-      "matricula": "6",
+      "nombre": "pepi",
+      "matricula": "123456789",
       "idEspecialidad": 4
     },
     {
+      "id": 12,
+      "nombre": "marcelo",
+      "matricula": "789456",
+      "idEspecialidad": 1
+    },
+    {
+      "id": 13,
+      "nombre": "camila",
+      "matricula": "45678914",
+      "idEspecialidad": 3
+    },
+    {
+      "id": 14,
+      "nombre": "fabian",
+      "matricula": "555555",
+      "idEspecialidad": 1
+    },
+    {
       "id": 15,
-      "nombre": "dw",
-      "matricula": "5",
-      "idEspecialidad": "1"
+      "nombre": "esteban",
+      "matricula": "1112212",
+      "idEspecialidad": 1
     },
     {
       "id": 16,
-      "nombre": "a",
-      "matricula": "as5",
-      "idEspecialidad": "1"
-    },
-    {
-      "id": 17,
-      "nombre": "asdasd",
-      "matricula": "654",
-      "idEspecialidad": "1"
-    },
-    {
-      "id": 18,
-      "nombre": "asdsa",
-      "matricula": "98798",
-      "idEspecialidad": "1"
-    },
-    {
-      "id": 19,
-      "nombre": "maxiprueba",
-      "matricula": "a4",
-      "idEspecialidad": "1"
+      "nombre": "gracie",
+      "matricula": "112122",
+      "idEspecialidad": 3
     }
   ],
   "obras_sociales": [
@@ -274,26 +256,6 @@
     {
       "id": 16,
       "id_medico": 16,
-      "id_obra_social": 1
-    },
-    {
-      "id": 17,
-      "id_medico": 17,
-      "id_obra_social": 1
-    },
-    {
-      "id": 18,
-      "id_medico": 15,
-      "id_obra_social": 1
-    },
-    {
-      "id": 19,
-      "id_medico": 18,
-      "id_obra_social": 1
-    },
-    {
-      "id": 20,
-      "id_medico": 19,
       "id_obra_social": 1
     }
   ],

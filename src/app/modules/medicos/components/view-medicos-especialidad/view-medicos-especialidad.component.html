@@ -27,7 +27,7 @@
   
 
   
-    <div *ngIf="medicosEspec.length>0" class="table-responsive-lg">
+    <div *ngIf="medicosEspec.length>0" class="table-responsive-lg"> 
     <div class="container" >
       
      <h2 > Medicos <span *ngIf="!verEspecialidad">{{especialidad}}</span> </h2>
@@ -47,8 +47,8 @@
            <td>{{doctor.nombre}}</td>
            <td>{{doctor.matricula}}</td>
            <td *ngIf="verEspecialidad" >{{doctor.idEspecialidad}} </td>
-           <td *ngIf="visible" ><a href="">Editar Informacion</a></td>
-           <td *ngIf="visible" ><a href="">Eliminar Medico</a> </td>
+           <td *ngIf="visible" ><button (click)="editar(doctor)" >Editar Informacion</button></td> 
+           <td *ngIf="visible" ><button >Eliminar Medico</button> </td>
          </tr>
        </tbody>
      </table>

@@ -22,13 +22,19 @@ export class ViewMedicsComponent{
   @Output()
   eventoParaBorrar:EventEmitter<number> = new EventEmitter();
   
-    borrar(id:number){
+  public  borrar(id:number){
       this.eventoParaBorrar.emit(id);
     }
  
-  
+  //// para editar
+  @Output()
+  eventoParaEditar:EventEmitter<Medico> = new EventEmitter();
 
-  
+  public editar(doctor:Medico){
+    this.eventoParaEditar.emit(doctor);
+   
+    
+  }
 
 
 }

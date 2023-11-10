@@ -1,17 +1,14 @@
-shared-navbar div{
-    height: 7000px;
-}
 
 
 .inicio{
-    margin-bottom: 10px;
+    margin-bottom: 0px;
 }
 
-.ContenedorLanding{
-    
-    margin: 0;
-    position:relative;
-    padding-bottom: 300px;
+body{
+    min-height: 1050px;
+    /*background-image: url("src/assets/4931029.jpg");*/
+    background-size: 100%;
+
 }
 h1{
     font-size: 50px;
