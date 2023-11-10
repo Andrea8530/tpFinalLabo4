@@ -1,7 +1,7 @@
 <button *ngIf="visible" (click)="tocarBoton()" class="soyUnBoton" >Ingresar nuevo medico</button>
 <div class="container" *ngIf="boton" >
 
-<div class="contenedorForm">
+  <div class="contenedorForm contenedorFormulario">
     <form class="formulario" autocomplete="off" [formGroup]="formulario" (ngSubmit)="agregarMedico()">
         <h2>Ingresar Datos</h2>
         <div class="mb-3">

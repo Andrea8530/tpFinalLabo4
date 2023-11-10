@@ -18,3 +18,9 @@ button:hover{
     background-color: #2e706b;   
     border: 2px solid black;
 }
+
+.footer{
+    position:absolute;
+    bottom:0;
+    width: 100%;
+}

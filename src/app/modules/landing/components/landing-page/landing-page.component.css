@@ -1,7 +1,17 @@
 
+shared-navbar div{
+    height: 7000px;
+}
+
+.ContenedorLanding{
+
+    margin: 0;
+    position:relative;
+    padding-bottom: 300px;
+}
 
 .inicio{
-    margin-bottom: 0px;
+    margin-bottom: 10px;
 }
 
 body{
