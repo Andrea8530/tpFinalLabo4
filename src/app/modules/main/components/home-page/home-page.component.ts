@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { lastValueFrom } from 'rxjs';
 import { ApiService } from 'src/app/core/apiService/api.service';
-import { Medico, Usuario } from 'src/app/core/models';
+import { Especialidad, Medico, OsporMedico, Usuario } from 'src/app/core/models';
 
 @Component({
   selector: 'main-home-page',
@@ -15,11 +15,13 @@ export class HomePageComponent implements OnInit {
 
   public num: number=0;
   public isActivo:Boolean = new Boolean();
+  public mostrarComponenteB = true;
   
   ngOnInit() {
     this.num = +this.route.snapshot.paramMap.get('numero')!; //lo trae por url
     this.isActivo = this.route.snapshot.paramMap.get('esActivo') === 'true';  //lo trae por url
     this.getMedicosXobraSocial(this.num);
+    this.getEspecialidades();
   }
 
 
@@ -40,16 +42,14 @@ export class HomePageComponent implements OnInit {
 
   medicosPorEspecialidad(idEspeci:number){
     this.listaMedicosEspec = this.listaMedicos.filter(medico => medico.idEspecialidad === idEspeci);
+    this.mostrarComponenteB = false;
   }
 
-  todosLosMedicos(){
-    this.listaMedicosEspec= this.listaMedicos;
+  public borrarFiltrosEspecialidad(){
+    this.mostrarComponenteB = true;
   }
 
 
-  borrarMedicoXobraSocial(idMed:number){
-
-  }
 
   refrescar(bool : Boolean){
     this.getMedicosXobraSocial(this.num)
@@ -63,7 +63,6 @@ export class HomePageComponent implements OnInit {
   public editarMedico(medico:Medico){
     this.medicoParaEditar = medico;
     this.visible = true;
-    console.log(medico);
   }
 
 
@@ -92,53 +91,59 @@ export class HomePageComponent implements OnInit {
           next: ()=>{ 
             alert("Se edito la informacion correctamente");
             this.getMedicosXobraSocial(this.num);
-            this.medicosPorEspecialidad(medico.idEspecialidad!) // no va aca,no actualiza la lista de especial
           },
           error:()=> console.log("error al querer editar informacion")
         })
-
-        
       }
-      
     }catch(error){
       console.log(error);
-      
     }
-    
   }
 
   public mostrar(vista:Boolean){
     this.visible = false;
   }
 
-}
-/*
-  
-  public async registrar(){
-    this.usuario!.contrasena =  this.formulario.value.contrasena
-     this.usuario!.email =  this.formulario.value.email
 
+  ///para borrar
+  public async borrar(idMed:number): Promise<OsporMedico[]>{
+    let respues: OsporMedico[] = [];
     try{
-      const check = this.serviceAuth.verificarUsuario(this.formulario.value.email);
-      console.log(check);
-      if(await check){
-        alert("Este usuario ya existe, Elija otro");
-        this.formulario.reset();
-
-      }else{
-
-        this.serviceApi.postUsuarios(this.usuario).subscribe({
-          next: ()=>{
-           alert("Se registro con exito el usuario");
-           this.router.navigate(['auth'])
-          },
-          error:()=> alert("Hubo un error al registrar")
-       })
-
-      }
+      let respuesta = this.serviceApi.getidMedicoXobraSocial(idMed, this.num);
+      respues = await lastValueFrom(respuesta);
     }catch(error){
-      console.log(error);
+      console.log("error");
     }
+    return respues;
   }
+
+  public idAborrar:OsporMedico = new OsporMedico();
+
+public async borrarMedicoXobraSocial(idMed:number){
+let num = (await this.borrar(idMed))  
   
-  */
+  this.serviceApi.deleteMedicoXobraSocial(num[0].id!).subscribe({
+    next: ()=>{
+      alert("Se borro con exitooo");
+      this.getMedicosXobraSocial(this.num)
+
+     },
+     error:()=> alert("Hubo un error al querer borrar")
+  })
+  
+}
+
+
+///para mandar especialidades al hijo
+public listaEspecialidades: Especialidad[]=[];
+
+public getEspecialidades(){
+  this.serviceApi.getEspecialidades().subscribe({
+    next: (data)=>{ 
+      this.listaEspecialidades = data
+    },
+    error:()=> console.log("error al traer datos de especialidades")
+  })
+}
+
+}

@@ -1,23 +1,23 @@
 
 <div class="container">
-<h2>Medicos</h2>
+<h2>Médicos</h2>
 <table class="table">
   <thead>
     <tr> 
       <th scope="col">Nombre</th>
-      <th scope="col">Matricula</th>
+      <th scope="col">Matrícula</th>
       <th scope="col"> Especialidad</th>
-      <th *ngIf="visible" scope="col">Eliminar Medico</th>
-      <th *ngIf="visible" scope="col">Editar Medico</th>
+      <th *ngIf="visible" scope="col">Eliminar Médico</th>
+      <th *ngIf="visible" scope="col">Editar Médico</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let doctor of medicos">
       <td>{{doctor.nombre}}</td>
       <td>{{doctor.matricula}}</td>
-      <td> {{doctor.idEspecialidad}} </td>
-      <td *ngIf="visible" ><a (click)="borrar(doctor.id!)" href="">Eliminar Medico</a> </td>
-      <td *ngIf="visible" ><button (click)="editar(doctor)" >Editar Medico</button> </td>
+      <td> {{especialidadNombre(doctor.idEspecialidad!)}} </td>
+      <td *ngIf="visible" ><button class="btn btn-primary" (click)="borrar(doctor.id!)">Eliminar Médico</button> </td>
+      <td *ngIf="visible" ><button class="btn btn-primary" (click)="editar(doctor)" >Editar Médico</button> </td>
     </tr>
   </tbody>
 </table>

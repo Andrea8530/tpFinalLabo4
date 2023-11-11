@@ -108,16 +108,11 @@ public medicoXObraSocial: OsporMedico = new OsporMedico();
            },
            error:()=> alert("Hubo un error al querer cargar la medico")
         }) 
-        
-        
-        
       }
 
     }catch(error){
-      console.log(error);
-      
+      console.log(error);     
     }
-  
   }
 
   public tocarBoton(){

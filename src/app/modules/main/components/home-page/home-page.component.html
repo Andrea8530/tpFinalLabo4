@@ -2,16 +2,18 @@
 <body>
 
     <div class="divMedicComponents">
-    <div *ngIf="!visible" >
-<medico-view-medicos-especialidad [visible]="isActivo" [medicos]="listaMedicos" [medicosEspec]="listaMedicosEspec" (eventoParaTraerTodosLosMedicos)="todosLosMedicos()" (eventoParaEspecialidad)="medicosPorEspecialidad($event)" (eventoParaEditar)="editarMedico($event)"  ></medico-view-medicos-especialidad>
-<medico-view-medics [visible]="isActivo"  *ngIf="listaMedicosEspec.length == 0" [medicos]="listaMedicos" (eventoParaBorrar)="borrarMedicoXobraSocial($event)" (eventoParaEditar)="editarMedico($event)" ></medico-view-medics>  
-<medico-add-medics [visible]="isActivo" [numberIdOs]="num" (eventoParaRefrescar)="refrescar($event)" ></medico-add-medics>
-</div>
-<div *ngIf="visible">
-<medico-edit-medics [medico]="medicoParaEditar" (eventoParaEditar)="editMedico($event)" (eventoParaMostrar)="mostrar($event)" ></medico-edit-medics>
-</div>
 
-</div>
+        <div *ngIf="!visible" >
+            <medico-view-medicos-especialidad [visible]="isActivo"  [medicosEspec]="listaMedicosEspec" (clicEnComponenteA)="borrarFiltrosEspecialidad()" (eventoParaEspecialidad)="medicosPorEspecialidad($event)"  ></medico-view-medicos-especialidad>
+            <medico-view-medics [visible]="isActivo" [especialidad]="listaEspecialidades" *ngIf="mostrarComponenteB" [medicos]="listaMedicos" (eventoParaBorrar)="borrarMedicoXobraSocial($event)" (eventoParaEditar)="editarMedico($event)"  ></medico-view-medics>  
+            <medico-add-medics [visible]="isActivo" [numberIdOs]="num" (eventoParaRefrescar)="refrescar($event)" ></medico-add-medics>
+        </div>
+        
+        <div *ngIf="visible">
+                <medico-edit-medics [medico]="medicoParaEditar" (eventoParaEditar)="editMedico($event)" (eventoParaMostrar)="mostrar($event)" ></medico-edit-medics>
+        </div>
+
+     </div>
 
 </body>
 

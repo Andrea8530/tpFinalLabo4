@@ -1,4 +1,4 @@
-<button *ngIf="visible" (click)="tocarBoton()" class="soyUnBoton" >Ingresar nuevo medico</button>
+<button *ngIf="visible" (click)="tocarBoton()" class="btn btn-primary soyUnBoton" >Ingresar nuevo Médico</button>
 <div class="container" *ngIf="boton" >
 
   <div class="contenedorForm contenedorFormulario">
@@ -10,7 +10,7 @@
           <span *ngIf="isValid('nombre')" class="span">{{getError('nombre')}}</span>
         </div>
         <div class="mb-3">
-          <label for="matricula" class="form-label">Matricula</label>
+          <label for="matricula" class="form-label">Matrícula</label>
           <input type="text" class="form-control" formControlName="matricula" id="matricula">
           <span *ngIf="isValid('matricula')">{{getError('matricula')}}</span>
         </div>
@@ -18,10 +18,10 @@
             <label for="idEspecialidad" class="form-label">Especialidad</label>
             <input type="number" class="form-control" formControlName="idEspecialidad" id="idEspecialidad" list="drawfidEspecialidad">
             <datalist id="drawfidEspecialidad">
-                <option value=1>Clinica</option>
-                <option value=2>Cardiologia</option>
-                <option value=3>Pediatria</option>
-                <option value=4>Oftalmologia</option>
+                <option value=1>Clínica</option>
+                <option value=2>Cardiología</option>
+                <option value=3>Pediatría</option>
+                <option value=4>Oftalmología</option>
               </datalist>
             <span *ngIf="isValid('idEspecialidad')">{{getError('idEspecialidad')}}</span>
             

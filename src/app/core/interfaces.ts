@@ -16,3 +16,9 @@ export interface ioSporMedico{
   id_medico: number | null,
   id_obra_social: number | null,
 }
+
+
+export interface iEspecialidad{
+  idEspecialidad: number | null,
+  nombre: string
+}

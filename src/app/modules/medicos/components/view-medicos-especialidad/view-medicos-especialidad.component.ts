@@ -26,8 +26,7 @@ export class ViewMedicosEspecialidadComponent {
   @Output()
   public eventoParaEspecialidad:EventEmitter<number> = new EventEmitter();
 
-  @Output()
-  public eventoParaTraerTodosLosMedicos:EventEmitter<Medico[]> = new EventEmitter();
+
 
   public medicoPorEspecialidad(num:number){
    
@@ -40,26 +39,35 @@ export class ViewMedicosEspecialidadComponent {
     }else{
       this.especialidad = "Oftalmologos"
     }
+
+    this.activarListado = true;
     this.verEspecialidad=false;
     this.eventoParaEspecialidad.emit(num);
   }
 
-  public TodosLosMedicos(){
-    this.eventoParaTraerTodosLosMedicos.emit();
-    this.verEspecialidad =true;
-  }
 
   formulario: FormGroup = this.fb.group({
     especialidad: [''],
   })
 
-    //// para editar
-    @Output()
-    eventoParaEditar:EventEmitter<Medico> = new EventEmitter();
-  
-    public editar(doctor:Medico){
-      this.eventoParaEditar.emit(doctor);
-    
-    } 
+
+  /////
+
+  public activarListado: boolean = false;
+
+  @Output() clicEnComponenteA = new EventEmitter<void>();
+
+    onClic() {
+      this.clicEnComponenteA.emit();
+    }
+
+
+    public BorrarFiltros(){
+      this.clicEnComponenteA.emit();
+      this.verEspecialidad =true;
+      this.medicosEspec =[];
+      this.activarListado=false;
+    }
+
 
 }

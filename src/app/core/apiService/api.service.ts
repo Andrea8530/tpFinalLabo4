@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError, map, of, switchMap } from 'rxjs';
-import { Medico, OsporMedico, Usuario } from '../models';
+import { Especialidad, Medico, OsporMedico, Usuario } from '../models';
 
 @Injectable({
   providedIn: 'root'
@@ -41,13 +41,7 @@ export class ApiService {
       );
   }
 
-  public deleteMedicoXobraSocial(id:number):Observable<Boolean>{
-    return this.http.delete<Boolean>(`${this.url}/medicos_por_obras_sociales/${id}`)
-    .pipe(
-      map(res=>true),
-      catchError(error => of(false))
-      );
-  }
+  
 
   public postMedico(medico : Medico):Observable<Medico>{
     return this.http.post<Medico>(`${this.url}/medicos`,medico);
@@ -73,6 +67,25 @@ export class ApiService {
   public getChequeoMedico(matricula:string):Observable<Medico[]>{
     return this.http.get<Medico[]>(`${this.url}/medicos?matricula=${matricula}`);
   }
+
+  /// para borrar
+  public getidMedicoXobraSocial (idMed:number, idOs:number ):Observable<OsporMedico[]>{
+    return this.http.get<OsporMedico[]>(`${this.url}/medicos_por_obras_sociales?id_medico=${idMed}&id_obra_social=${idOs}`)
+  }
+
+  public deleteMedicoXobraSocial(id:number):Observable<Boolean>{
+    return this.http.delete<Boolean>(`${this.url}/medicos_por_obras_sociales/${id}`)
+    .pipe(
+      map(res=>true),
+      catchError(error => of(false))
+      );
+  }
+  
+///para traer las especialidades
+  public getEspecialidades():Observable<Especialidad[]>{
+    return this.http.get<Especialidad[]>(`${this.url}/Especialidades`)
+  }
+  
 
 }
 

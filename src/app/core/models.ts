@@ -1,4 +1,4 @@
-import { iMedico, iUsuario, ioSporMedico } from "./interfaces";
+import { iEspecialidad, iMedico, iUsuario, ioSporMedico } from "./interfaces";
 
 export class Usuario implements iUsuario{
   id: number | null = null;
@@ -36,6 +36,17 @@ export class OsporMedico implements ioSporMedico{
     this.id = osPorMedico == undefined ? null : osPorMedico.id;
     this.id_medico = osPorMedico == undefined ? null : osPorMedico.id_medico;
     this.id_obra_social = osPorMedico == undefined ? null : osPorMedico.id_obra_social;
+  }
+  
+}
+
+export class Especialidad implements iEspecialidad{
+  idEspecialidad: number | null = null;
+  nombre: string = '';
+
+  constructor(especialidad?:any){
+    this.idEspecialidad = especialidad == undefined ? null : especialidad.id;
+    this.nombre = especialidad == undefined ? '' : especialidad.nombre;
   }
   
 }
