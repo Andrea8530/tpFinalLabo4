@@ -2,10 +2,8 @@
 
 .contenedorBotones{
     display: flex;
-   
     justify-content: center;
- /* flex-direction: column; /* Para alinear verticalmente */
-  align-items: center; 
+    align-items: center; 
 }
 
 button{

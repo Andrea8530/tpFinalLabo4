@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
+import emailjs from '@emailjs/browser';
 
 @Component({
   selector: 'main-mail',

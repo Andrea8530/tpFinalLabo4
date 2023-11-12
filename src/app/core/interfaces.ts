@@ -25,9 +25,3 @@ export interface iEspecialidad{
   nombre: string
 }
 
-
-///GUARD
-export interface LoginResponse{
-  user: Usuario,
-  token: string;
-}

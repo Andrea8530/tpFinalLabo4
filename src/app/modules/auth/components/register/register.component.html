@@ -10,6 +10,7 @@
         </div>
         <div class="mb-3">
           <label for="contraseña" class="form-label">Password</label>
+          <p>Minimo 6 caracteres, una letra y un numero</p>
           <input type="password" class="form-control" formControlName="contrasena" id="contraseña">
           <span *ngIf="isValid('contrasena')">{{getError('contrasena')}}</span>
         </div>

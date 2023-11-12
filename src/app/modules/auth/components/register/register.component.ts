@@ -15,12 +15,10 @@ export class RegisterComponent {
   constructor(private router:Router, private serviceApi:ApiService, private fb: FormBuilder, private serviceAuth:AuthService){}
 
 
-  //public usuario: Usuario | null = null;
-
   public usuario:Usuario = new Usuario();
 
   private emailPattern: RegExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  private contrasenaPattern = /^(?=.*[a-zA-Z]).{6,}$/;
+  private contrasenaPattern = /^(?=.*[a-zA-Z])(?=.*\d).+/ ;
 
   formulario: FormGroup = this.fb.group({
     email: new FormControl('', [Validators.required, Validators.pattern(this.emailPattern)]),
@@ -81,10 +79,6 @@ export class RegisterComponent {
       console.log(error);
     }
   }
-
-
-
-
 }
 
 

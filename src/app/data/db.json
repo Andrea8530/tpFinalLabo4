@@ -39,6 +39,11 @@
       "id": 8,
       "email": "aremi@gmail.com",
       "contrasena": "123456a"
+    },
+    {
+      "id": 9,
+      "email": "andrea@gmail.com",
+      "contrasena": "123456a"
     }
   ],
   "medicos": [
@@ -158,7 +163,7 @@
     },
     {
       "id": 20,
-      "nombre": "Ricardo",
+      "nombre": "Mario",
       "matricula": "M523694",
       "idEspecialidad": 3
     },
@@ -265,11 +270,6 @@
       "id_obra_social": 2
     },
     {
-      "id": 19,
-      "id_medico": 20,
-      "id_obra_social": 2
-    },
-    {
       "id": 20,
       "id_medico": 12,
       "id_obra_social": 3
@@ -343,6 +343,11 @@
       "id": 34,
       "id_medico": 4,
       "id_obra_social": 1
+    },
+    {
+      "id": 35,
+      "id_medico": 6,
+      "id_obra_social": 2
     }
   ],
   "Especialidades": [

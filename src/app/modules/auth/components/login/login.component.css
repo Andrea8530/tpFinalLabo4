@@ -8,7 +8,7 @@ h2{
     text-align: center;
 }
 
-body{
+.body{
     display: flex;
     justify-content: center;
     height: 70vh;

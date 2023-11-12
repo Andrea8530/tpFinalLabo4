@@ -19,8 +19,6 @@ export class ApiService {
 
 //para crear usuario nueve
   public postUsuarios(usuario:Usuario):Observable<Usuario>{
-    console.log(usuario, 'hola');
-
     return this.http.post<Usuario>(`${this.url}/usuarios`, usuario);
   }
 

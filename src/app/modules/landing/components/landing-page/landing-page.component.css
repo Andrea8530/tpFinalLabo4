@@ -16,7 +16,6 @@ shared-navbar div{
 
 body{
     min-height: 1050px;
-    /*background-image: url("src/assets/4931029.jpg");*/
     background-size: 100%;
 
 }
@@ -34,7 +33,6 @@ h1{
     text-align: center;
 }
 h2{
-    margin-bottom: 50px;
     font-family: Verdana, Geneva, Tahoma, sans-serif
 }
 
@@ -82,4 +80,9 @@ h2{
 a:hover{
     cursor: pointer;
     border: 2px solid #2e706b ;
+}
+
+p{
+    font-size: 20px;
+    margin-bottom: 35px;
 }

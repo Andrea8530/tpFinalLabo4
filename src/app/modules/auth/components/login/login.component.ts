@@ -19,7 +19,6 @@ export class LoginComponent {
   public usuario: Usuario | null = null;
 
   private emailPattern: RegExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  /* private contrasenaPattern = /^(?=.*[a-zA-Z]).{6,}$/; */
 
   formulario: FormGroup = this.fb.group({
     email: new FormControl('', [Validators.required, Validators.pattern(this.emailPattern)]),
@@ -55,38 +54,6 @@ export class LoginComponent {
   public async ingresar(){
 
     try{
-      /* TODO ESTO ES LO QUE ESTABA ANTES
-      const check = this.authService.verificarLogin(this.formulario.value.email, this.formulario.value.contrasena);
-      
-      if(await check){
-        //
-        console.log(this.formulario.value.email);
-        
-        if(this.formulario.value.email === 'osde@gmail.com'){          
-          this.router.navigate(['/home', 1, true]);
-        }else if(this.formulario.value.email === 'ospe@gmail.com'){
-          this.router.navigate(['/home', 2, true]);
-        }else if(this.formulario.value.email === 'federada@gmail.com'){
-          this.router.navigate(['/home', 3, true]);
-        }else if(this.formulario.value.email === 'medife@gmail.com'){
-          this.router.navigate(['/home', 4, true]);
-        }else{
-          this.router.navigate(['/landing']);
-        }
-      
-        //
-        
-      }else{
-        alert("Usuario no existe");
-        this.email = this.formulario.value.email;
-
-        this.formulario.reset({ email: this.email });
-        
-      }
-    }catch(error){
-      console.log(error);
-    }
-*/
       let isLogin: boolean = await this.authService.verificarLogin(this.formulario.value.email, this.formulario.value.contrasena);
       
       if(isLogin){        
@@ -99,10 +66,12 @@ export class LoginComponent {
         }else if(this.formulario.value.email === 'medife@gmail.com'){
           this.router.navigate(['/home', 4, true]);
         }else{
-          console.log(localStorage.getItem('token'), "Imprimiendo lo que imprime el get item");
-          
           this.router.navigate(['/landing']);
         }
+      }else{
+        alert("Usuario no existe");
+        this.email = this.formulario.value.email;
+        this.formulario.reset({ email: this.email });
       }
 
     }catch(error){
