@@ -1,0 +1,34 @@
+<div class="container">
+  <form
+    class="formulario"
+    [formGroup]="form"
+    autocomplete="off"
+    (ngSubmit)="enviarCorreo()"
+  >
+    <h2>Ingresa tus recetas para autorizar</h2>
+    <div class="mb-3">
+      <label for="from_name" class="form-label">Tu Nombre</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="from_name"
+        id="from_name"
+      />
+    </div>
+    <div class="mb-3">
+      <input class="form-control" type="file" id="formFileMultiple" multiple />
+    </div>
+
+    <div class="mb-3 input-group">
+      <span class="input-group-text">Observaciones</span>
+      <textarea
+        class="form-control"
+        aria-label="With textarea"
+        formControlName="message"
+        id="message"
+        rows="3"
+      ></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>

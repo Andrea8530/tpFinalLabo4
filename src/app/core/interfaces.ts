@@ -1,3 +1,5 @@
+import{Usuario} from "./models";
+
 export interface iUsuario{
   id: number | null,
   email: string,
@@ -21,4 +23,11 @@ export interface ioSporMedico{
 export interface iEspecialidad{
   idEspecialidad: number | null,
   nombre: string
+}
+
+
+///GUARD
+export interface LoginResponse{
+  user: Usuario,
+  token: string;
 }

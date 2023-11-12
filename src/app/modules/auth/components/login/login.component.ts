@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/app/core/apiService/auth.service';
+import { AuthService } from 'src/app/core/apiService/authService/auth.service';
 import { Usuario } from 'src/app/core/models';
 
 @Component({
@@ -13,10 +13,10 @@ export class LoginComponent {
 
 
 
-  constructor(private serviceApi:AuthService, private router:Router, private fb: FormBuilder){}
+  constructor(private authService:AuthService, private router:Router, private fb: FormBuilder){}
 
   private email: string = '';
-  //public usuario: Usuario | null = null;
+  public usuario: Usuario | null = null;
 
   private emailPattern: RegExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   /* private contrasenaPattern = /^(?=.*[a-zA-Z]).{6,}$/; */
@@ -52,12 +52,12 @@ export class LoginComponent {
 
 
 
-
   public async ingresar(){
 
     try{
-      const check = this.serviceApi.verificarLogin(this.formulario.value.email, this.formulario.value.contrasena);
-
+      /* TODO ESTO ES LO QUE ESTABA ANTES
+      const check = this.authService.verificarLogin(this.formulario.value.email, this.formulario.value.contrasena);
+      
       if(await check){
         //
         console.log(this.formulario.value.email);
@@ -86,6 +86,29 @@ export class LoginComponent {
     }catch(error){
       console.log(error);
     }
+*/
+      let isLogin: boolean = await this.authService.verificarLogin(this.formulario.value.email, this.formulario.value.contrasena);
+      
+      if(isLogin){        
+        if(this.formulario.value.email === 'osde@gmail.com'){          
+          this.router.navigate(['/home', 1, true]);
+        }else if(this.formulario.value.email === 'ospe@gmail.com'){
+          this.router.navigate(['/home', 2, true]);
+        }else if(this.formulario.value.email === 'federada@gmail.com'){
+          this.router.navigate(['/home', 3, true]);
+        }else if(this.formulario.value.email === 'medife@gmail.com'){
+          this.router.navigate(['/home', 4, true]);
+        }else{
+          console.log(localStorage.getItem('token'), "Imprimiendo lo que imprime el get item");
+          
+          this.router.navigate(['/landing']);
+        }
+      }
+
+    }catch(error){
+        console.log(error);
+      }
+      
   }
 
   public irARegistrar(){

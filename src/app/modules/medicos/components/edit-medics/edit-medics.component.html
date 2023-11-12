@@ -1,4 +1,5 @@
-<form class="formulario" autocomplete="off" [formGroup]="formulario!" (ngSubmit)="editar()" >
+<div class="container">
+<form class="contenedorFormulario" autocomplete="off" [formGroup]="formulario!" (ngSubmit)="editar()" >
     <h2>Editar Datos</h2>
     <div class="mb-3">
       <label for="nombre" class="form-label">Nombre</label>
@@ -25,3 +26,4 @@
     <button [disabled]="formulario!.invalid" type="submit" class="btn btn-primary" >Submit</button>
   </form>
   <button class="btn btn-primary" (click)="cancelar()" >Cancelar</button>
+</div>

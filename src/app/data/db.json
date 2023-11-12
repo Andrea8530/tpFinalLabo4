@@ -62,9 +62,9 @@
     },
     {
       "id": 4,
-      "nombre": "Are",
+      "nombre": "Aremix",
       "matricula": "M987651",
-      "idEspecialidad": 1
+      "idEspecialidad": 2
     },
     {
       "id": 5,
@@ -161,6 +161,18 @@
       "nombre": "Ricardo",
       "matricula": "M523694",
       "idEspecialidad": 3
+    },
+    {
+      "id": 21,
+      "nombre": "a2",
+      "matricula": "1",
+      "idEspecialidad": 1
+    },
+    {
+      "id": 22,
+      "nombre": "Lui Red Fox",
+      "matricula": "154Abc",
+      "idEspecialidad": 1
     }
   ],
   "obras_sociales": [
@@ -186,11 +198,6 @@
       "id": 1,
       "id_medico": 1,
       "id_obra_social": 2
-    },
-    {
-      "id": 4,
-      "id_medico": 4,
-      "id_obra_social": 1
     },
     {
       "id": 5,
@@ -331,6 +338,11 @@
       "id": 33,
       "id_medico": 16,
       "id_obra_social": 3
+    },
+    {
+      "id": 34,
+      "id_medico": 4,
+      "id_obra_social": 1
     }
   ],
   "Especialidades": [

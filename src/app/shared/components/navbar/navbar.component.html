@@ -5,15 +5,14 @@
         
       </span>
     </button>
-    <a href=""><img src="assets/logo.png" class="logoNav" alt=""></a>
+    <img src="assets/logo.png" class="logoNav" alt="">
     <div class="collapse navbar-collapse navBar"  id="navbarNavAltMarkup">
       
       <div class="navbar-nav">
-        
-        <!-- <a class="nav-link active" aria-current="page" href="auth"><p>Nuestra Historia</p></a>
-        <a class="nav-link active" aria-current="page" href="auth"><p>Con quien trabajamos</p></a> -->
-        <a class="nav-link active" aria-current="page" href=""><p>Inicio</p></a>
-        <a class="nav-link active" aria-current="page" href="auth"><p>Login</p></a>
+        <a class="nav-link active" aria-current="page" (click)="goToInicio()" ><p>Inicio</p></a>
+        <a *ngIf="!servicioAuth" class="nav-link active" aria-current="page" (click)="goToLogin()"><p>Login</p></a>
+        <a *ngIf="servicioAuth" class="nav-link active" aria-current="page" (click)="logout()"><p>Logout</p></a>
+        <a class="nav-link active" aria-current="page" (click)="goToEnviarRecetas()"><p>Enviar Recetas</p></a>
       </div>
     </div>
   </div>

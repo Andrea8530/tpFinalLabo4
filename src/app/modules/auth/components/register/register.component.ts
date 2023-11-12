@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/core/apiService/api.service';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { AuthService } from 'src/app/core/apiService/auth.service';
+import { AuthService } from 'src/app/core/apiService/authService/auth.service';
 import { Usuario } from 'src/app/core/models';
 
 @Component({

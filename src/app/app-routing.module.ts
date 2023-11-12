@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { Error404Component } from './shared/components/error404/error404.component';
+import { EnviarRecetasComponent } from './modules/main/components/recetas/enviarRecetas/enviarRecetas.component';
+import { authGuard } from './core/apiService/authService/guard/auth.guard';
 
 const routes: Routes = [
   {
@@ -15,6 +17,11 @@ const routes: Routes = [
     path:'auth',
     loadChildren:()=>import('./modules/auth/auth.module').then(m=>m.AuthModule)
   },
+  {
+    path:'enviarRecetas',
+    component: EnviarRecetasComponent,
+    canActivate:[authGuard]
+  }, 
   {
     path:'',
     redirectTo: 'landing',
