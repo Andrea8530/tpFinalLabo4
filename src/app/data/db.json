@@ -44,6 +44,11 @@
       "id": 9,
       "email": "andrea@gmail.com",
       "contrasena": "123456a"
+    },
+    {
+      "id": 10,
+      "email": "agustin@gmail.com",
+      "contrasena": "123456a"
     }
   ],
   "medicos": [
@@ -178,6 +183,12 @@
       "nombre": "Lui Red Fox",
       "matricula": "154Abc",
       "idEspecialidad": 1
+    },
+    {
+      "id": 23,
+      "nombre": "Agustin Battisti",
+      "matricula": "Mb456",
+      "idEspecialidad": 2
     }
   ],
   "obras_sociales": [
@@ -247,11 +258,6 @@
     {
       "id": 13,
       "id_medico": 13,
-      "id_obra_social": 1
-    },
-    {
-      "id": 15,
-      "id_medico": 20,
       "id_obra_social": 1
     },
     {
